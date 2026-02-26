@@ -7,7 +7,7 @@
 서울대학교 항공우주공학과 이석준입니다. 시스템의 한계를 테스트하고 결과를 증명하는 실행주의자(Doer)입니다.
 지난 3년간의 기술적 성과와 미래 모빌리티의 비전을 이 피치덱에 담았습니다.
 
-![이미지 설명](./)
+![이미지 설명](./KakaoTalk_20250730_184231564.jpg)
 ---
 
 ## 2. A Long Journey to become an Engineering-based Entrepreneur
