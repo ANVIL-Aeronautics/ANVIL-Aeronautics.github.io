@@ -13,6 +13,13 @@ layout: default
 ## 2. Project: AeroRover
 지상과 공중을 융합한 차세대 하이브리드 모빌리티 시스템입니다.
 
+## 🛠️ Key Projects
+* **AeroRover**: 지상/공중 하이브리드 모빌리티
+  👉 **[AeroRover 상세 기술 및 구동 영상 보러가기](aerorover.md)**
+
+* **Ornithopter**: 생체모방 비행체
+  👉 **[Ornithopter 시뮬레이션 데이터 보러가기](ornithopter.md)**
+  
 **[여기에 사진 넣기 - 깃허브 이슈 창에 사진 드래그&드랍해서 나온 링크 복붙]**
 ![AeroRover 렌더링 이미지](사진링크)
 
