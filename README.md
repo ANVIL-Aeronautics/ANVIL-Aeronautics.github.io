@@ -13,6 +13,16 @@
 혼자했다.
 
 ## 3. My Projects
+<a href="aerorover.html" class="project-card">
+    <strong>🚀 AeroRover (Hybrid Mobility)</strong>
+    지상과 공중을 융합한 차세대 하이브리드 모빌리티 시스템 (Caterpillar + Ducted Fan + Jet Vane).
+</a>
+
+<a href="ornithopter.html" class="project-card">
+    <strong>🦅 Ornithopter</strong>
+    생체 모방 비행 기술 및 대드론 방어 체계 연구 (MATLAB & Ansys Fluent Analysis).
+</a>
+
 ### (1) Project "Ornithopter"
 생체 모방 비행 기술 및 대드론 방어 체계 연구. MATLAB 및 Ansys Fluent를 활용한 정밀 유체역학 해석을 완료했습니다.
 
