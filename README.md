@@ -10,17 +10,18 @@
 > Aerospace Engineering (The Future of Humanity)
 
 <img src="./KakaoTalk_20250730_184231564.jpg" width="400" style="display: block; margin: 0 auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2);">
+
 I am Seokjoon Lee from South Korea.
 This year 2026, I am a senior in Seoul National University. I do love my major, Aerospace Engineering.
 I want to be a Doer, testing the limitation of system and showing the world results.
 
 My personal belief is following:
+
 > In terms of faith, I believe in Jesus
 > 
 > In terms of Human being, I love my family, my friends, and my neighbors
 > 
 > In terms of Universe, I do believe the power of Science and Technology
----
 
 ## 2. A Long Journey to become an Engineering-based Entrepreneur
 In 2023, when I was a junior
@@ -52,31 +53,31 @@ ADEX 가서 내 신념이 맞다는 것을 입증했다.
 <a href="ornithopter.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="Ornithopter Preview">
     <strong>Ornithopter with Peak</strong>
-    A Drone Emulating Birds' Flapping Motion.
+    > A Drone Emulating Birds' Flapping Motion.
 </a>
 
 <a href="aerorover.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="AeroRover Preview">
     <strong>AeroRover (Hybrid Mobility)</strong>
-    Terrestrial and Aviational Combined Mobility System(Caterpillar + Ducted Fan + Jet Vane).
+    > Terrestrial and Aviational Combined Mobility System(Caterpillar + Ducted Fan + Jet Vane).
 </a>
 
 <a href="hydrogen.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="Hydrogen Hybrid Drone Preview">
     <strong>Hydrogen Hybrid Drone</strong>
-    수소 하이브리드 드론.
+    > 수소 하이브리드 드론.
 </a>
 
 <a href="bci.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="BCI Preview">
     <strong>Cognitive Attack with Microwaves</strong>
-    전파 공격.
+    > 전파 공격.
 </a>
 
 <a href="nasa.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="NASA Open Source Preview">
     <strong>NASA Vulnerability</strong>
-    나사 보안 취약점.
+    > 나사 보안 취약점.
 </a>
 
 ### (1) Project "Ornithopter"
