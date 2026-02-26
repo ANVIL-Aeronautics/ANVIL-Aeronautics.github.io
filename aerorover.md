@@ -1,16 +1,13 @@
----
-layout: default
----
+[⬅ 메인 기지로 복귀](index.html)
 
-[⬅ 메인 기지로 복귀](README.md)
+# 🚀 AeroRover 상세 기술 피치덱
 
-# 🚀 AeroRover 상세 피치덱
-
-이 페이지는 VC 및 미국 파트너들을 위한 AeroRover의 상세 기술 사양 및 제어 로직을 담고 있습니다.
+지상과 공중을 융합한 차세대 하이브리드 모빌리티 시스템입니다.
 
 ## 1. System Architecture
-(여기에 노션 쓰듯이 쭉쭉 글 쓰고 사진 넣으면 됨)
-![도면 사진](사진링크)
+* 지상 구동계: Caterpillar 시스템
+* 공중 추진계: 고출력 Ducted Fan 적용
+* 자세 제어: Jet Vane을 활용한 정밀 추력 편향 제어
 
 ## 2. MATLAB & Fluent Analysis
-(유체역학 시뮬레이션 결과 등등)
+(여기에 시뮬레이션 데이터랑 사진들 나중에 넣으면 됨)
