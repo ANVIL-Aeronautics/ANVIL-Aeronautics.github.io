@@ -15,6 +15,7 @@
 
 ## 3. My Projects
 <a href="aerorover.html" class="project-card">
+    <img src="./KakaoTalk_20250730_184231564.jpg" alt="AeroRover Preview">
     <strong>🚀 AeroRover (Hybrid Mobility)</strong>
     지상과 공중을 융합한 차세대 하이브리드 모빌리티 시스템 (Caterpillar + Ducted Fan + Jet Vane).
 </a>
