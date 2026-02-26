@@ -23,6 +23,8 @@ My personal belief is following:
 > 
 > In terms of Universe, I do believe the power of Science and Technology
 
+---
+
 ## 2. A Long Journey to become an Engineering-based Entrepreneur
 In 2023, when I was a junior
 동아리 창설->창설축 물로켓 만들기 시작
@@ -53,31 +55,41 @@ ADEX 가서 내 신념이 맞다는 것을 입증했다.
 <a href="ornithopter.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="Ornithopter Preview">
     <strong>Ornithopter with Peak</strong>
-    > A Drone Emulating Birds' Flapping Motion.
+    <span style="display: block; margin-left: 15px; color: #888;">
+        A Drone emulating birds' flapping motion
+    </span>
 </a>
 
 <a href="aerorover.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="AeroRover Preview">
     <strong>AeroRover (Hybrid Mobility)</strong>
-    > Terrestrial and Aviational Combined Mobility System(Caterpillar + Ducted Fan + Jet Vane).
+    <span style="display: block; margin-left: 15px; color: #888;">
+        Terrestrial and Aviational Combined Mobility System
+    </span>
 </a>
 
 <a href="hydrogen.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="Hydrogen Hybrid Drone Preview">
     <strong>Hydrogen Hybrid Drone</strong>
-    > 수소 하이브리드 드론.
+    <span style="display: block; margin-left: 15px; color: #888;">
+        Hydrogen Hybrid Drone
+    </span>
 </a>
 
 <a href="bci.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="BCI Preview">
     <strong>Cognitive Attack with Microwaves</strong>
-    > 전파 공격.
+    <span style="display: block; margin-left: 15px; color: #888;">
+        전파 공격
+    </span>
 </a>
 
 <a href="nasa.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="NASA Open Source Preview">
     <strong>NASA Vulnerability</strong>
-    > 나사 보안 취약점.
+    <span style="display: block; margin-left: 15px; color: #888;">
+        나사 보안 취약점
+    </span>
 </a>
 
 ### (1) Project "Ornithopter"
