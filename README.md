@@ -14,7 +14,6 @@ I am Seokjoon Lee from South Korea.
 This year 2026, I am a senior in Seoul National University. I do love my major, Aerospace Engineering.
 I want to be a Doer, testing the limitation of system and showing the world results.
 
-
 My personal belief is following:
 > In terms of faith, I believe in Jesus
 > 
