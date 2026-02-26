@@ -55,41 +55,28 @@ ADEX 가서 내 신념이 맞다는 것을 입증했다.
 <a href="ornithopter.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="Ornithopter Preview">
     <strong>Ornithopter with Peak</strong>
-    <span style="display: block; margin-left: 15px; color: #888;">
-        A Drone emulating birds' flapping motion
-    </span>
+    A Drone emulating birds' flapping motion
 </a>
 
 <a href="aerorover.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="AeroRover Preview">
     <strong>AeroRover (Hybrid Mobility)</strong>
-    <span style="display: block; margin-left: 15px; color: #888;">
-        Terrestrial and Aviational Combined Mobility System
-    </span>
+    Terrestrial and Aviational Combined Mobility System
 </a>
 
 <a href="hydrogen.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="Hydrogen Hybrid Drone Preview">
     <strong>Hydrogen Hybrid Drone</strong>
-    <span style="display: block; margin-left: 15px; color: #888;">
-        Hydrogen Hybrid Drone
-    </span>
 </a>
 
 <a href="bci.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="BCI Preview">
     <strong>Cognitive Attack with Microwaves</strong>
-    <span style="display: block; margin-left: 15px; color: #888;">
-        전파 공격
-    </span>
 </a>
 
 <a href="nasa.html" class="project-card">
     <img src="./KakaoTalk_20250730_184231564.jpg" alt="NASA Open Source Preview">
     <strong>NASA Vulnerability</strong>
-    <span style="display: block; margin-left: 15px; color: #888;">
-        나사 보안 취약점
-    </span>
 </a>
 
 ### (1) Project "Ornithopter"
