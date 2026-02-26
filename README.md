@@ -17,10 +17,8 @@
 ### 📸 System Architecture
 ![AeroRover 렌더링 또는 도면 사진](여기에 사진 링크 붙여넣기)
 
-### 🎥 Simulation & Control Logic
-<iframe width="100%" height="450" src="유튜브 임베드 링크" frameborder="0" allowfullscreen></iframe>
-
----
+## 🛠️ Key Projects
+👉 **[🚀 AeroRover 상세 기술 및 구동 영상 보러가기](aerorover.html)**
 
 ## 3. 🦅 Project: Ornithopter
 생체 모방 비행 기술 및 대드론 방어 체계 연구. MATLAB 및 Ansys Fluent를 활용한 정밀 유체역학 해석을 완료했습니다.
