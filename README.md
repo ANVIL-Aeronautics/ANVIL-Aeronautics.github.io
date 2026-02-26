@@ -8,6 +8,8 @@
 지난 3년간의 기술적 성과와 미래 모빌리티의 비전을 이 피치덱에 담았습니다.
 
 ![이미지 설명](./KakaoTalk_20250730_184231564.jpg)
+
+<img src="./KakaoTalk_20250730_184231564.jpg" width="500">
 ---
 
 ## 2. A Long Journey to become an Engineering-based Entrepreneur
