@@ -26,6 +26,7 @@ My personal belief is following:
 ---
 
 ## 2. A Long Journey to become an Engineering-based Entrepreneur
+Actually, until sophomore, I wanted to become a professor. But in fall semester of sophomore, my eagerness to do practical things was poping out.
 In 2023, when I was a junior
 동아리 창설->창설축 물로켓 만들기 시작
 교통 관련->자동차 동아리, 대형 면허, 교통사고 조사 자격증
