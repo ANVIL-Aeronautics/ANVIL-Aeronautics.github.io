@@ -1,65 +1,361 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANVIL Aeronautics | Pitch Deck</title>
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+    <title>Seokjoon Lee | ANVIL Aeronautics</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
-        body { background-color: #0a0a0a; margin: 0; font-family: 'Inter', sans-serif; }
-        /* 화면 정중앙 100% 완벽 정렬 (치우침 원천 차단) */
-        .container { max-width: 800px; width: 90%; margin: 50px auto 100px auto; }
+        /* Base Styles & Dark Theme */
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #f4f4f5;
+            --accent-color: #e11d48; /* Tactical Red for Defense vibe */
+            --secondary-bg: #171717;
+            --border-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fb7185;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Layout Utility */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10vw;
+            /* 배경 이미지는 여기에 네 실제 이미지 URL을 넣으면 된다 */
+            background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.9)), url('https://via.placeholder.com/1920x1080/1a1a1a/333333?text=AeroRover+Background') no-repeat center center/cover;
+        }
+
+        #hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        #hero .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #a1a1aa;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            color: #d4d4d8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--accent-color);
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--text-color);
+            color: var(--text-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .project-card {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .project-card ul {
+            margin-left: 20px;
+            margin-top: 15px;
+            color: #d4d4d8;
+        }
+
+        .project-card li {
+            margin-bottom: 10px;
+        }
+
+        /* Story Section */
+        .story-block {
+            margin-bottom: 60px;
+        }
+
+        .story-block h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .story-block p {
+            margin-bottom: 15px;
+            color: #a1a1aa;
+        }
+
+        .story-block ul {
+            margin-left: 20px;
+            color: #d4d4d8;
+        }
+
+        .story-block li {
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            background-color: var(--secondary-bg);
+            padding: 100px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        #contact h2 {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #a1a1aa;
+        }
+
+        .social-links a {
+            font-size: 1.2rem;
+            margin: 0 15px;
+            color: var(--text-color);
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2.5rem; }
+            #hero .quote { font-size: 1.2rem; }
+            nav ul { display: none; /* 모바일에서는 심플하게 메뉴 숨김 */ }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <zero-md src="README.md">
-            <template>
-                <style>
-                    /* 텍스트 & 레이아웃 디자인 */
-                    h1 { font-size: 3.5rem; color: #ffffff; border-bottom: 2px solid #00ff88; padding-bottom: 15px; margin-bottom: 10px;}
-                    h2 { font-size: 2rem; color: #00ff88; border-left: 4px solid #00ff88; padding-left: 15px; margin-top: 50px;}
-                    h3 { font-size: 1.5rem; color: #fff; margin-top: 30px; }
-                    p, li { font-size: 1.15rem; color: #cccccc; line-height: 1.7; }
-                    strong { color: #ffffff; }
-                    img, video, iframe { max-width: 100%; border-radius: 8px; border: 1px solid #333; margin: 25px 0; box-shadow: 0 4px 15px rgba(0, 255, 136, 0.15); display: block; }
-                    a { color: #00ff88; text-decoration: none; font-weight: bold; }
-                    a:hover { text-decoration: underline; background-color: #111; padding: 2px 5px; border-radius: 4px; }
-                    hr { border: 0; border-top: 1px solid #222; margin: 50px 0; }
-                    blockquote { border-left: 4px solid #555; padding-left: 15px; color: #888; font-style: italic; background: #111; padding: 10px 15px; border-radius: 0 8px 8px 0;}
 
-                    /* 클릭 가능한 프로젝트 카드(블록) 디자인 - 이 안에 있어야 완벽하게 먹힘 */
-                    /* 프로젝트 카드 내 이미지 스타일 */
-                    .project-card img {
-                        width: 100%;
-                        height: 180px; /* 블록 내 이미지 높이 고정 */
-                        object-fit: cover; /* 이미지가 비율에 맞게 꽉 차도록 설정 */
-                        border-radius: 4px;
-                        margin-bottom: 15px;
-                        border: 1px solid #333;
-                    }
-                    
-                    .project-card { 
-                        border: 1px solid #222; 
-                        padding: 20px; 
-                        margin-bottom: 25px; 
-                        transition: all 0.3s ease; 
-                        text-decoration: none; 
-                        display: block; 
-                        color: #cccccc; 
-                        border-radius: 8px; 
-                        background-color: #0d0d0d;
-                    }
-                    
-                    .project-card:hover { 
-                        border-color: #00ff88; 
-                        background-color: #111; 
-                        transform: translateY(-5px); 
-                    }
-                </style>
-            </template>
-        </zero-md>
-    </div>
+    <nav>
+        <div class="logo">ANVIL AERONAUTICS</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#story">The Story</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero">
+        <div class="quote">"The crash doesn't define who you are. But how you respond to it will."</div>
+        <h1>SEOKJOON LEE</h1>
+        <p><strong>Aerospace and Defense Hardware Builder.</strong><br>Defending freedom through extreme engineering.</p>
+        <div>
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#story" class="btn btn-outline">Read the Story</a>
+        </div>
+    </header>
+
+    <section id="projects" class="container">
+        <h2>Operations</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <h3>Project "Ornithopter"</h3>
+                <p><strong>Biomimetic Kinetic Kill Drone</strong></p>
+                <ul>
+                    <li><strong>The Grind:</strong> 11 iterations built. 15+ test flights conducted. Over 5M KRW invested.</li>
+                    <li><strong>Current Status:</strong> Redesigned using DeLaurier's aerodynamic model. Reaching the absolute edge of PoC.</li>
+                    <li><strong>Future Operation:</strong> Integrating an artificial kinetic beak to physically strike and shatter enemy drone rotor blades in mid-air. I do not stop until this flies.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>Project "AeroRover"</h3>
+                <p><strong>Hybrid Tactical Mobility</strong></p>
+                <ul>
+                    <li><strong>Concept:</strong> A paradigm-shifting platform integrating a 4WD tracked chassis with an advanced EDF + Jet Vane propulsion system for vertical maneuvers.</li>
+                    <li><strong>Next Phase:</strong> Utilizing US and German-made COTS components for rapid prototyping. Actively seeking funding to execute the hardware PoC.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>Cyber Security Research</h3>
+                <p><strong>cFS Vulnerabilities</strong></p>
+                <ul>
+                    <li>Securing aerospace software infrastructure. Coming soon.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="story" class="container">
+        <h2>The Trajectory</h2>
+        
+        <div class="story-block">
+            <h3>3-1. The Execution</h3>
+            <p><em>Theory is obsolete without execution. I refused to be confined to theory-centric lectures. I wanted to build.</em></p>
+            <ul>
+                <li><strong>The Genesis of Leadership:</strong> Rallied students to build a 2-stage water rocket with payload ejection. I promised my team: "I will put at least 100,000 KRW in your hands." We won 3rd place, and I kept that promise.</li>
+                <li><strong>Ground-Level Mechanics:</strong> Acquired a heavy commercial vehicle license and the national Traffic Accident Appraiser license to understand physical limits and collisions.</li>
+                <li><strong>The Masterclass in Team Building:</strong> Took a gap year to perfect the rocket. We failed multiple launches. Working Monday to Friday, 10 AM to 7 PM, I fostered absolute trust, bought meals, and embraced rational debate. I personally engineered the separation mechanism.</li>
+                <li><strong>Redefining Braking Systems:</strong> Won 1st place with an SUA prevention device. Used fluid resistance to decelerate the driveshaft continuously, proving it with a 3D-printed torque rig.</li>
+                <li><strong>The Global Reality:</strong> Winning 3rd place at ICDF was overshadowed by seeing Chinese undergrads win 1st. I felt the chilling reality of their tech acceleration. My mission crystalized: Tech Patriotism.</li>
+                <li><strong>Pushing Propulsion:</strong> Engineered a shuttered side thruster for guided projectiles, verifying theoretical thrust via Ansys Fluent.</li>
+            </ul>
+        </div>
+
+        <div class="story-block">
+            <h3>3-2. The Crash</h3>
+            <p><em>I targeted US defense giants like Shield AI and Anduril. Then, I hit the Valley of Death.</em></p>
+            <ul>
+                <li><strong>The Valley of Death:</strong> Failed the Preliminary Startup Package. Clashed with my co-founder. Bombarded with skepticism: "Where is your business model?" Overwhelmed, I pivoted to a bird-inspired drone to appease critics.</li>
+                <li><strong>The Cost of Compromise:</strong> Lost 13kg and suffered severe insomnia. I lost the joy of engineering trying to satisfy Korean mentors who insisted on "Customers and BMs" instead of targeting VCs aligned with extreme hardware.</li>
+                <li><strong>The Rebirth:</strong> At the SNAAC Ideathon, my team was paralyzed over a microbe wastewater BM. Biology isn't my field, but I focused for 30 minutes, synthesized the logic, and delivered a legendary pitch. We won 1st place in two days.</li>
+                <li><strong>15 Hardware Crashes:</strong> Poured my 5M KRW savings into 11 iterations of the Ornithopter. Conducted 15+ flights. All failed. It was pure heuristic engineering—surviving shattered frames and negative Gs.</li>
+            </ul>
+        </div>
+
+        <div class="story-block">
+            <h3>3-3. The Validation</h3>
+            <p><em>Execution is the only metric that matters.</em></p>
+            <ul>
+                <li><strong>Hacking the System:</strong> Enraged by the lack of support for hardware builders after a KBS doc, I marched into the SNU Engineering Dean's office and demanded backing. This directly led to the SNU Entrepreneurial Innovation Program.</li>
+                <li><strong>The Ultimate Proof:</strong> At ADEX 2025, I saw a drone-launched guided projectile mockup at the LIG Nex1 booth, partnered with Shield AI. It was my exact concept from 10 months prior. Had I built the prototype, the PoC would be mine. Lesson learned: Execution over everything.</li>
+                <li><strong>The Next Lap:</strong> The Ornithopter is back on the bench. Using DeLaurier's model, I am reaching the edge of PoC. Project "AeroRover" is underway. Join me on the track.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Finish Your Lap</h2>
+        <p>I am currently seeking US-based VC partners and defense network access for PoC.<br>If you bet on relentless execution, let's talk.</p>
+        <div class="social-links">
+            <a href="mailto:lsjaerospace@gmail.com">Email</a>
+            <a href="www.linkedin.com/in/seokjoon-lee-55696a377" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ANVIL-Aeronautics" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
 </body>
 </html>
