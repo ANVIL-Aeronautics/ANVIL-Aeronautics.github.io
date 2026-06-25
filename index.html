@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seokjoon Lee | ANVIL Aeronautics</title>
     <style>
-        /* Base Styles & Dark Theme */
+        /* Base Styles & Tactical Dark Theme */
         :root {
-            --bg-color: #0a0a0a;
+            --bg-color: #050505;
             --text-color: #f4f4f5;
-            --accent-color: #e11d48; /* Tactical Red for Defense vibe */
-            --secondary-bg: #171717;
-            --border-color: #333;
+            --accent-color: #e11d48; /* Tactical Red */
+            --accent-muted: #4c0519;
+            --secondary-bg: #0f0f11;
+            --border-color: #212124;
+            --mono-font: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
         }
         
         * {
@@ -28,27 +30,28 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
+            letter-spacing: -0.02em;
         }
 
         a {
             color: var(--accent-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         a:hover {
             color: #fb7185;
         }
 
-        /* Navigation */
+        /* Fixed Navigation Grid Line */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 50px;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(10px);
+            padding: 25px 50px;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -57,20 +60,23 @@
         }
 
         nav .logo {
+            font-family: var(--mono-font);
             font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-size: 1.05rem;
+            letter-spacing: 2px;
+            color: var(--text-color);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
 
         nav ul li a {
-            color: var(--text-color);
-            font-size: 0.9rem;
+            color: #a1a1aa;
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -81,20 +87,33 @@
 
         /* Layout Utility */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 140px 24px;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 10px;
+            font-family: var(--mono-font);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-color);
         }
 
-        /* Hero Section */
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--accent-color);
+        }
+
+        /* Hero Section (Command Interface Vibe) */
         #hero {
             height: 100vh;
             display: flex;
@@ -102,71 +121,91 @@
             justify-content: center;
             align-items: flex-start;
             padding: 0 10vw;
-            background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.95)), url('assets/hero-banner.jpg') no-repeat center center/cover;
+            background: linear-gradient(180deg, rgba(5,5,5,0.7) 0%, rgba(5,5,5,0.95) 100%), url('assets/hero-banner.jpg') no-repeat center center/cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        #hero .sys-label {
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
         }
 
         #hero h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            max-width: 800px;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 25px;
+            max-width: 900px;
         }
 
         #hero .quote {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-style: italic;
             color: #a1a1aa;
-            margin-bottom: 30px;
-            border-left: 4px solid var(--accent-color);
+            margin-bottom: 35px;
+            border-left: 2px solid var(--accent-color);
             padding-left: 20px;
-            max-width: 800px;
+            max-width: 750px;
+            line-height: 1.6;
         }
 
         #hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
+            font-size: 1.15rem;
+            margin-bottom: 45px;
             max-width: 650px;
             color: #d4d4d8;
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 16px 32px;
             background-color: var(--accent-color);
             color: #fff;
-            font-weight: bold;
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 4px;
-            margin-right: 20px;
-            transition: background 0.3s ease;
+            border-radius: 2px;
+            transition: all 0.2s ease;
         }
 
         .btn:hover {
             background-color: #be123c;
-            color: #fff;
+            transform: translateY(-2px);
         }
 
         .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--text-color);
-            color: var(--text-color);
+            border: 1px solid #444;
+            color: #d4d4d8;
         }
 
         .btn-outline:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
+            background-color: #fff;
+            color: #050505;
+            border-color: #fff;
         }
 
-        /* Projects Section */
+        /* Technical Blueprint Grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 24px;
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 550px) {
             .project-grid {
                 grid-template-columns: 1fr;
             }
@@ -175,122 +214,215 @@
         .project-card {
             background-color: var(--secondary-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 3px;
             padding: 40px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
+            border-color: #444;
+            background-color: #121215;
+        }
+
+        .project-card .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .project-card .index-code {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            color: #71717a;
+            letter-spacing: 1px;
         }
 
         .project-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 5px;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: #fff;
+            letter-spacing: -0.03em;
         }
 
         .project-card .subtitle {
-            font-size: 1rem;
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--accent-color);
-            margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            margin-bottom: 20px;
         }
 
-        .project-card p {
+        .project-card .desc {
             color: #a1a1aa;
             font-size: 0.95rem;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
         .project-card ul {
-            margin-left: 20px;
-            color: #d4d4d8;
-            font-size: 0.95rem;
+            list-style: none;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
         }
 
         .project-card li {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: #d4d4d8;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .project-card li strong {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            color: #a1a1aa;
+            text-transform: uppercase;
+            min-width: 110px;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        /* Sequential Timeline Block */
+        .story-container {
+            border-left: 1px solid var(--border-color);
+            padding-left: 35px;
+            margin-left: 10px;
+        }
+
+        .story-block {
+            position: relative;
+            margin-bottom: 70px;
+        }
+
+        .story-block::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 8px;
+            width: 9px;
+            height: 9px;
+            background-color: var(--bg-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .story-block .phase-tag {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 8px;
         }
 
-        /* Story Section */
-        .story-block {
-            margin-bottom: 60px;
-            border-left: 2px solid var(--border-color);
-            padding-left: 25px;
-        }
-
         .story-block h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            font-weight: 800;
             margin-bottom: 20px;
             color: #fff;
+            letter-spacing: -0.02em;
         }
 
         .story-block p {
-            margin-bottom: 15px;
-            color: #d4d4d8;
-        }
-
-        .story-block p em {
+            margin-bottom: 20px;
             color: #a1a1aa;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .story-block ul {
-            margin-left: 20px;
-            color: #a1a1aa;
+            list-style: none;
         }
 
         .story-block li {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            color: #d4d4d8;
+            line-height: 1.6;
+            padding-left: 15px;
+            position: relative;
         }
 
-        .story-block strong {
-            color: var(--text-color);
+        .story-block li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
         }
 
-        /* Contact Section */
+        /* Tactical Footer */
         #contact {
             text-align: center;
-            background-color: var(--secondary-bg);
-            padding: 100px 20px;
+            background-color: #0b0b0c;
+            padding: 120px 24px;
             border-top: 1px solid var(--border-color);
         }
 
         #contact h2 {
+            justify-content: center;
             border: none;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
+        #contact h2::before { display: none; }
+
         #contact p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
             color: #a1a1aa;
+            line-height: 1.6;
+        }
+
+        #contact p strong {
+            color: var(--text-color);
+            font-family: var(--mono-font);
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
         }
 
         .social-links a {
-            font-size: 1.2rem;
-            margin: 0 15px;
-            color: var(--text-color);
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 5px;
+            font-family: var(--mono-font);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a1a1aa;
+            padding-bottom: 4px;
+            border-bottom: 1px solid transparent;
         }
 
         .social-links a:hover {
             color: var(--accent-color);
+            border-color: var(--accent-color);
         }
 
-        /* Responsive */
+        /* Responsive Configuration */
         @media (max-width: 768px) {
-            #hero h1 { font-size: 2.5rem; }
-            #hero .quote { font-size: 1.2rem; }
+            #hero h1 { font-size: 2.8rem; }
+            #hero .quote { font-size: 1.1rem; }
             nav { padding: 20px; }
             nav ul { display: none; }
+            .story-container { margin-left: 5px; padding-left: 20px; }
+            .story-block::before { left: -25px; }
         }
     </style>
 </head>
@@ -300,19 +432,20 @@
         <div class="logo">ANVIL AERONAUTICS</div>
         <ul>
             <li><a href="#hero">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#story">The Story</a></li>
+            <li><a href="#projects">Proof of Work</a></li>
+            <li><a href="#story">Builder Story</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header id="hero">
+        <div class="sys-label">Operational Manifesto v2.0</div>
         <div class="quote">"I build real machines because some technologies are too necessary to wait for permission."</div>
         <h1>SEOKJOON LEE</h1>
-        <p><strong>An Aerospace Builder for Freedom, Truth, and the Frontier.</strong><br>Senior at Seoul National University. Turning necessary physical systems into operational reality.</p>
-        <div>
-            <a href="#projects" class="btn">View Proof of Work</a>
-            <a href="#story" class="btn btn-outline">Read Builder Story</a>
+        <p>An Aerospace Builder for Freedom, Truth, and the Frontier. Undergraduate Senior at Seoul National University. Turning vital physical systems into operational reality.</p>
+        <div class="btn-group">
+            <a href="#projects" class="btn">Access Proof of Work</a>
+            <a href="#story" class="btn btn-outline">Read System Story</a>
         </div>
     </header>
 
@@ -322,79 +455,97 @@
             
             <div class="project-card">
                 <div>
-                    <h3>AeroRover</h3>
+                    <div class="card-header">
+                        <h3>AeroRover</h3>
+                        <span class="index-code">[OP-01]</span>
+                    </div>
                     <div class="subtitle">Hybrid Ground-Air Mobility Platform</div>
-                    <p>Exploring a paradigm-shifting machine designed to traverse constrained ground environments and execute tactical short aerial maneuvers dynamically.</p>
+                    <p class="desc">A paradigm-shifting tactical platform engineered to traverse highly constrained ground environments and execute critical, low-altitude aerial maneuvers dynamically.</p>
                 </div>
                 <ul>
-                    <li><strong>Execution:</strong> Ground driving demonstrated & low-altitude lift achieved.</li>
-                    <li><strong>Architecture:</strong> Tracked chassis combined with an advanced propulsion system.</li>
-                    <li><strong>Status:</strong> Active hardware prototyping and mechanism redesign ongoing.</li>
+                    <li><strong>Execution</strong> Ground driving demonstrated & short-altitude lift deployment achieved.</li>
+                    <li><strong>Architecture</strong> High-mobility tracked chassis integrated with specialized advanced propulsion.</li>
+                    <li><strong>Status</strong> Core mechanism redesign and tactical hardware optimization ongoing.</li>
                 </ul>
             </div>
 
             <div class="project-card">
                 <div>
-                    <h3>Ornithopter</h3>
-                    <div class="subtitle">Bird-Inspired Aerial Platform</div>
-                    <p>A relentless hardware grind developing biomimetic flapping-wing aerial systems under extreme environmental and budget constraints.</p>
+                    <div class="card-header">
+                        <h3>Ornithopter</h3>
+                        <span class="index-code">[OP-02]</span>
+                    </div>
+                    <div class="subtitle">Bird-Inspired Flapping-Wing Platform</div>
+                    <p class="desc">A rigorous heuristic hardware grind developing biological kinetic flight systems under severe environmental, structural, and budget boundaries.</p>
                 </div>
                 <ul>
-                    <li><strong>The Grind:</strong> 11 hardware iterations and 15+ rigorous flight tests executed.</li>
-                    <li><strong>Lessons:</strong> Learned through broken frames, attitude instability, and actuator limits.</li>
-                    <li><strong>Philosophy:</strong> Real engineering is physical, repetitive, violent, and honest.</li>
+                    <li><strong>The Grind</strong> 11 complete hardware iterations and 15+ high-velocity flight tests executed.</li>
+                    <li><strong>Empirical data</strong> Mapped through broken airframes, insufficient lift vectors, and attitude limits.</li>
+                    <li><strong>Philosophy</strong> Real engineering is not romantic. It is physical, iterative, violent, and honest.</li>
                 </ul>
             </div>
 
             <div class="project-card">
                 <div>
-                    <h3>Two-Stage Rocket</h3>
-                    <div class="subtitle">Water Propulsion & Payload Deployment</div>
-                    <p>A system engineered to challenge institutional skepticism regarding undergraduate capabilities, focusing on multi-stage staging mechanisms.</p>
+                    <div class="card-header">
+                        <h3>Two-Stage Rocket</h3>
+                        <span class="index-code">[OP-03]</span>
+                    </div>
+                    <div class="subtitle">Water Propulsion & Staging System</div>
+                    <p class="desc">Multi-stage launch platform engineered to challenge standard institutional constraints and demonstrate rapid prototyping capabilities under undergraduate leadership.</p>
                 </div>
                 <ul>
-                    <li><strong>Leadership:</strong> Founded a dedicated student team to execute the build from scratch.</li>
-                    <li><strong>Results:</strong> Won a major university engineering prize within 3 months of inception.</li>
-                    <li><strong>Insight:</strong> Leadership is building trust so people keep moving after structural failures.</li>
+                    <li><strong>Leadership</strong> Formed and operated an independent student engineering team from zero.</li>
+                    <li><strong>Results</strong> Secured a major university engineering award within 3 months of program launch.</li>
+                    <li><strong>Insight</strong> Hardware leadership is building trust so teams keep executing after structural failures.</li>
                 </ul>
             </div>
 
             <div class="project-card">
                 <div>
-                    <h3>SUA Verification Device</h3>
-                    <div class="subtitle">Vehicles & Real-World Evidence</div>
-                    <p>A verification system combining vehicle safety engineering and hardware data to reconstruct disputed acceleration events with empirical truth.</p>
+                    <div class="card-header">
+                        <h3>SUA Verification Device</h3>
+                        <span class="index-code">[OP-04]</span>
+                    </div>
+                    <div class="subtitle">Sudden Acceleration Analytics System</div>
+                    <p class="desc">A tactical hardware verification system combining vehicle dynamics and physical telemetry to reconstruct disputed acceleration events with unalterable empirical truth.</p>
                 </div>
                 <ul>
-                    <li><strong>Validation:</strong> 1st place at the SNU Creative Engineering Competition; represented SNU at ICDF.</li>
-                    <li><strong>Foundation:</strong> Backed by a heavy commercial vehicle license and accident appraiser training.</li>
-                    <li><strong>Core Belief:</strong> When human testimony and institutional claims collide, physics reveals the truth.</li>
+                    <li><strong>Validation</strong> 1st place at the SNU Creative Engineering Competition; represented university at ICDF.</li>
+                    <li><strong>Credentials</strong> Backed by commercial heavy driving qualifications and accident appraiser forensics.</li>
+                    <li><strong>Core Maxim</strong> When human testimonies and institutional claims collide, physics makes the truth visible.</li>
                 </ul>
             </div>
 
             <div class="project-card">
                 <div>
-                    <h3>Simulation & Computation</h3>
-                    <div class="subtitle">CFD & Physical Intelligence Systems</div>
-                    <p>Applying computational tools not as abstract code, but as a critical layer to calculate, simulate, control, and secure physical reality.</p>
+                    <div class="card-header">
+                        <h3>Physical Computation</h3>
+                        <span class="index-code">[CP-01]</span>
+                    </div>
+                    <div class="subtitle">CFD & Kinematic Trajectory Simulation</div>
+                    <p class="desc">Deploying computational layers not as abstract software, but as an essential predictive architecture to calculate, simulate, and defend physical events.</p>
                 </div>
                 <ul>
-                    <li><strong>Scope:</strong> Ballistic trajectories, CFD flow analysis, and aeroelastic impact modeling.</li>
-                    <li><strong>Industry:</strong> Contributed simulation and 3D design for an anti-drone defense system project.</li>
-                    <li><strong>Future Track:</strong> Connecting sensor networks, simulation, and institutional action into a coherent operational picture.</li>
+                    <li><strong>Technical Scope</strong> Ballistic trajectories, hypersonic flow regimes, and aeroelastic impact analysis.</li>
+                    <li><strong>Industry Proof</strong> Provided CFD simulation and 3D design mapping for an anti-drone defense platform.</li>
+                    <li><strong>Intelligence</strong> Scaling infrastructure to bind sensor traces, telemetry, and institutional execution.</li>
                 </ul>
             </div>
 
             <div class="project-card">
                 <div>
-                    <h3>Future Systems</h3>
-                    <div class="subtitle">Orbital Safety & Software Security</div>
-                    <p>Proactive research targeting structural resilience, long-endurance propulsion, and aerospace critical infrastructure robustness.</p>
+                    <div class="card-header">
+                        <h3>Future Tracks</h3>
+                        <span class="index-code">[RE-01]</span>
+                    </div>
+                    <div class="subtitle">Orbital Safety & Software Resilience</div>
+                    <p class="desc">Forward-leaning aerospace research targeting critical hardware survival envelopes, deep-tech propulsion, and system vulnerability resilience.</p>
                 </div>
                 <ul>
-                    <li><strong>Space Systems:</strong> Analyzing high-speed debris impact on deployable satellite structures.</li>
-                    <li><strong>Cybersecurity:</strong> Researching the security and resilience of core aerospace flight software (cFS).</li>
-                    <li><strong>Energy:</strong> Studying hydrogen hybrid drone control approaches for endurance platforms.</li>
+                    <li><strong>Space Systems</strong> Numerical tracking of orbital debris impacts on deployable satellite structures.</li>
+                    <li><strong>Cybersecurity</strong> Auditing open-source flight software infrastructure (cFS) for structural resilience.</li>
+                    <li><strong>Propulsion</strong> Analyzing long-endurance hybrid approaches for persistent aerial platforms.</li>
                 </ul>
             </div>
 
@@ -403,60 +554,71 @@
 
     <section id="story" class="container">
         <h2>Builder Story</h2>
-        
-        <div class="story-block">
-            <h3>1. From Competition to Engineering Identity</h3>
-            <p><em>Driven by a intense focus on learning and execution from an early age.</em></p>
-            <ul>
-                <li>Spent consecutive years ranked near the top of the entire school in middle school, eventually securing the first rank through absolute grind.</li>
-                <li>Failing to enter a science high school became the first major turning point, shattering conventional elite student conformity and forging a desire to prove things directly through physical execution.</li>
-            </ul>
-        </div>
+        <div class="story-container">
+            
+            <div class="story-block">
+                <div class="phase-tag">Phase 01</div>
+                <h3>From Competition to Engineering Identity</h3>
+                <p>Driven by an uncompromising focus on deep mastery and independent execution from an early age.</p>
+                <ul>
+                    <li>Maintained relentless focus near the absolute top of the entire student body in middle school, ultimately capturing the first rank through sheer grit.</li>
+                    <li>Missing admission to a science high school forced an early breakdown of conventional elite conformity, forging an insistence on proving ideas directly via physical execution rather than classroom compliance.</li>
+                </ul>
+            </div>
 
-        <div class="story-block">
-            <h3>2. Independent Curiosity & The New Worldview</h3>
-            <p><em>Obsessed with the physical constraints governing motion, velocity, and trajectories.</em></p>
-            <ul>
-                <li>Self-studied aerospace mechanics, fluid dynamics, and cosmic expansion models outside the standard high school curriculum.</li>
-                <li>Utilized a gap year to change deeply: mathematically modeled fluid variables, adopted a first-principles framework, and completely mastered working English independently to interface with global tech networks.</li>
-                <li>Grew dedicated to the concepts of open societies, national security, and the idea that technology must serve human freedom.</li>
-            </ul>
-        </div>
+            <div class="story-block">
+                <div class="phase-tag">Phase 02</div>
+                <h3>Independent Curiosity & The First-Principles Worldview</h3>
+                <p>Obsessed with the fundamental laws governing velocity, fluid boundaries, and extreme trajectories.</p>
+                <ul>
+                    <li>Independently self-studied advanced aerospace mechanics and fluid behavior far outside standard academic tracks.</li>
+                    <li>Leveraged a pivotal gap year to break down external metrics: mathematically modeled complex parameters, absorbed first-principles problem-solving, and mastered working English to interface directly with international tech networks.</li>
+                    <li>Built a permanent alignment with the principles of open societies, technological defense, and national security infrastructure.</li>
+                </ul>
+            </div>
 
-        <div class="story-block">
-            <h3>3. The Realities of Validation & Teams</h3>
-            <p><em>Discovering that logical correctness requires undeniable physical proof to survive.</em></p>
-            <ul>
-                <li>At Seoul National University, pointed out critical engineering club anomalies that were ignored—and later vindicated when those exact issues forced catastrophic failures in competition.</li>
-                <li>Founded an independent team to build a two-stage rocket system despite academic skepticism, managing rigorous schedules, budget allocations, and engineering the payload separation mechanism to achieve a major prize.</li>
-                <li>Obtained commercial heavy driving credentials and traffic accident appraiser expertise to master ground vehicle dynamics and collision analytics under extreme constraints.</li>
-            </ul>
-        </div>
+            <div class="story-block">
+                <div class="phase-tag">Phase 03</div>
+                <h3>The Realities of Validation & Tactical Teams</h3>
+                <p>Internalizing the heavy law that logical clarity requires absolute empirical proof to survive institutional environments.</p>
+                <ul>
+                    <li>Identified critical structural club anomalies at Seoul National University that were systematically dismissed—and later vindicated when those exact failure modes compromised the platform in competition.</li>
+                    <li>Built and ran a decoupled student team to engineer a multi-stage rocket staging architecture, overriding formal skepticism to deploy functional mechanisms and claim a top engineering prize.</li>
+                    <li>Acquired commercial heavy transport credentials and traffic accident appraisal training to explicitly master vehicle mechanics and structural impact signatures.</li>
+                </ul>
+            </div>
 
-        <div class="story-block">
-            <h3>4. The Valley of Death & Rebirth</h3>
-            <p><em>Surviving the collapse of a hardware initiative to emerge as a disciplined builder.</em></p>
-            <ul>
-                <li>Attempted a deep-tech aerospace hardware startup in 2025 and hit the absolute wall: co-founder friction, funding depletion, team disintegration, and severe burnout leading to a 13kg weight loss.</li>
-                <li>Rebuilt an internal operating system through faith in Jesus Christ, decoupling personal validation from immediate engineering outcomes.</li>
-                <li>Demonstrated extreme structural agility by joining an ideathon outside his domain, synthesizing a complex microbial wastewater business architecture in 30 minutes, and delivering a pitch that secured 1st place.</li>
-            </ul>
-        </div>
+            <div class="story-block">
+                <div class="phase-tag">Phase 04</div>
+                <h3>The Valley of Death & Internal Rebuilding</h3>
+                <p>Surviving the comprehensive failure of a deep-tech hardware initiative to emerge as a lethal, disciplined builder.</p>
+                <ul>
+                    <li>Pushed an aerospace hardware initiative in 2025 into the valley of death: co-founder friction, institutional funding friction, team collapse, and intense stress resulting in a 13kg mass reduction.</li>
+                    <li>Radically overhauled personal operating parameters through faith in Jesus Christ, decoupling structural identity from temporary engineering outcomes.</li>
+                    <li>Proved immediate operational adaptability by entering a competition outside his domain, synthesizing a complex biochemical business logic in 30 minutes, and securing 1st place.</li>
+                </ul>
+            </div>
 
-        <div class="story-block">
-            <h3>5. Strategic Alignment</h3>
-            <p><em>Validating technical intuition against global defense standards.</em></p>
-            <ul>
-                <li>Pushed through 11 iterations of a custom ornithopter platform, treating repeated structural failures purely as heuristic physical data.</li>
-                <li>At ADEX 2025, discovered a newly displayed compact payload concept from a major defense firm that mirrored his exact unexecuted design from 10 months prior, proving his technical instinct was highly aligned with the future battlefield.</li>
-                <li>Marched into the SNU Engineering Dean's office to demand structural support for raw hardware builders, leading directly to the creation of the Entrepreneurial Innovation Program, where he was designated as <strong>Class Zero</strong>.</li>
-            </ul>
+            <div class="story-block">
+                <div class="phase-tag">Phase 05</div>
+                <h3>Strategic Convergence & Class Zero</h3>
+                <p>Confirming design instincts against sovereign defense frameworks and driving institutional changes.</p>
+                <ul>
+                    <li>Executed 11 iterations of an independent flight system, extracting clean structural data from repeated kinetic impacts.</li>
+                    <li>At ADEX 2025, witnessed a newly revealed defense mockup from a prime sovereign contractor that tracked his exact unexecuted payload concept from 10 months prior, proving his technical instincts map perfectly to the actual battlefield.</li>
+                    <li>Confronted the Office of the Dean at SNU Engineering to demand real institutional shielding for raw hardware builders, leading directly to the Entrepreneurial Innovation Program, where he was designated as <strong>Class Zero</strong>.</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
     <footer id="contact">
         <h2>Finish Your Lap</h2>
-        <p>Seeking technical mentors, extreme hardware investors, and builders aligned with national security and defense systems.<br><strong>Hardware does not accept lies. If the physics is wrong, the system fails.</strong></p>
+        <p>
+            Seeking technical mentors, extreme hardware networks, and capital partners aligned with national security and deep-tech execution.
+            <strong>Hardware does not accept lies. If the physics is wrong, the system fails.</strong>
+        </p>
         <div class="social-links">
             <a href="mailto:lsjaerospace@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/seokjoon-lee-55696a377" target="_blank">LinkedIn</a>
