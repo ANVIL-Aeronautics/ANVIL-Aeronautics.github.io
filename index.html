@@ -102,8 +102,7 @@
             justify-content: center;
             align-items: flex-start;
             padding: 0 10vw;
-            /* 배경 이미지는 여기에 네 실제 이미지 URL을 넣으면 된다 */
-            background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.9)), url('ornithopterflight2.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.95)), url('assets/hero-banner.jpg') no-repeat center center/cover;
         }
 
         #hero h1 {
@@ -121,12 +120,13 @@
             margin-bottom: 30px;
             border-left: 4px solid var(--accent-color);
             padding-left: 20px;
+            max-width: 800px;
         }
 
         #hero p {
             font-size: 1.2rem;
             margin-bottom: 40px;
-            max-width: 600px;
+            max-width: 650px;
             color: #d4d4d8;
         }
 
@@ -140,6 +140,12 @@
             letter-spacing: 1px;
             border-radius: 4px;
             margin-right: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #be123c;
+            color: #fff;
         }
 
         .btn-outline {
@@ -156,8 +162,14 @@
         /* Projects Section */
         .project-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+
+        @media (max-width: 500px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .project-card {
@@ -165,7 +177,10 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 40px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -174,24 +189,41 @@
         }
 
         .project-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .project-card .subtitle {
+            font-size: 1rem;
+            font-weight: 700;
             color: var(--accent-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-card p {
+            color: #a1a1aa;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .project-card ul {
             margin-left: 20px;
-            margin-top: 15px;
             color: #d4d4d8;
+            font-size: 0.95rem;
         }
 
         .project-card li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         /* Story Section */
         .story-block {
             margin-bottom: 60px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 25px;
         }
 
         .story-block h3 {
@@ -202,16 +234,24 @@
 
         .story-block p {
             margin-bottom: 15px;
+            color: #d4d4d8;
+        }
+
+        .story-block p em {
             color: #a1a1aa;
         }
 
         .story-block ul {
             margin-left: 20px;
-            color: #d4d4d8;
+            color: #a1a1aa;
         }
 
         .story-block li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+        }
+
+        .story-block strong {
+            color: var(--text-color);
         }
 
         /* Contact Section */
@@ -249,7 +289,8 @@
         @media (max-width: 768px) {
             #hero h1 { font-size: 2.5rem; }
             #hero .quote { font-size: 1.2rem; }
-            nav ul { display: none; /* 모바일에서는 심플하게 메뉴 숨김 */ }
+            nav { padding: 20px; }
+            nav ul { display: none; }
         }
     </style>
 </head>
@@ -266,43 +307,94 @@
     </nav>
 
     <header id="hero">
-        <div class="quote">"The crash doesn't define who you are. But how you respond to it will."</div>
+        <div class="quote">"I build real machines because some technologies are too necessary to wait for permission."</div>
         <h1>SEOKJOON LEE</h1>
-        <p><strong>Aerospace and Defense Hardware Builder.</strong><br>Defending freedom through extreme engineering.</p>
+        <p><strong>An Aerospace Builder for Freedom, Truth, and the Frontier.</strong><br>Senior at Seoul National University. Turning necessary physical systems into operational reality.</p>
         <div>
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#story" class="btn btn-outline">Read the Story</a>
+            <a href="#projects" class="btn">View Proof of Work</a>
+            <a href="#story" class="btn btn-outline">Read Builder Story</a>
         </div>
     </header>
 
     <section id="projects" class="container">
-        <h2>Operations</h2>
+        <h2>Proof of Work</h2>
         <div class="project-grid">
             
             <div class="project-card">
-                <h3>Project "Ornithopter"</h3>
-                <p><strong>Biomimetic Kinetic Kill Drone</strong></p>
+                <div>
+                    <h3>AeroRover</h3>
+                    <div class="subtitle">Hybrid Ground-Air Mobility Platform</div>
+                    <p>Exploring a paradigm-shifting machine designed to traverse constrained ground environments and execute tactical short aerial maneuvers dynamically.</p>
+                </div>
                 <ul>
-                    <li><strong>The Grind:</strong> 11 iterations built. 15+ test flights conducted. Over 5M KRW invested.</li>
-                    <li><strong>Current Status:</strong> Redesigned using DeLaurier's aerodynamic model. Reaching the absolute edge of PoC.</li>
-                    <li><strong>Future Operation:</strong> Integrating an artificial kinetic beak to physically strike and shatter enemy drone rotor blades in mid-air. I do not stop until this flies.</li>
+                    <li><strong>Execution:</strong> Ground driving demonstrated & low-altitude lift achieved.</li>
+                    <li><strong>Architecture:</strong> Tracked chassis combined with an advanced propulsion system.</li>
+                    <li><strong>Status:</strong> Active hardware prototyping and mechanism redesign ongoing.</li>
                 </ul>
             </div>
 
             <div class="project-card">
-                <h3>Project "AeroRover"</h3>
-                <p><strong>Hybrid Tactical Mobility</strong></p>
+                <div>
+                    <h3>Ornithopter</h3>
+                    <div class="subtitle">Bird-Inspired Aerial Platform</div>
+                    <p>A relentless hardware grind developing biomimetic flapping-wing aerial systems under extreme environmental and budget constraints.</p>
+                </div>
                 <ul>
-                    <li><strong>Concept:</strong> A paradigm-shifting platform integrating a 4WD tracked chassis with an advanced EDF + Jet Vane propulsion system for vertical maneuvers.</li>
-                    <li><strong>Next Phase:</strong> Utilizing US and German-made COTS components for rapid prototyping. Actively seeking funding to execute the hardware PoC.</li>
+                    <li><strong>The Grind:</strong> 11 hardware iterations and 15+ rigorous flight tests executed.</li>
+                    <li><strong>Lessons:</strong> Learned through broken frames, attitude instability, and actuator limits.</li>
+                    <li><strong>Philosophy:</strong> Real engineering is physical, repetitive, violent, and honest.</li>
                 </ul>
             </div>
 
             <div class="project-card">
-                <h3>Cyber Security Research</h3>
-                <p><strong>cFS Vulnerabilities</strong></p>
+                <div>
+                    <h3>Two-Stage Rocket</h3>
+                    <div class="subtitle">Water Propulsion & Payload Deployment</div>
+                    <p>A system engineered to challenge institutional skepticism regarding undergraduate capabilities, focusing on multi-stage staging mechanisms.</p>
+                </div>
                 <ul>
-                    <li>Securing aerospace software infrastructure. Coming soon.</li>
+                    <li><strong>Leadership:</strong> Founded a dedicated student team to execute the build from scratch.</li>
+                    <li><strong>Results:</strong> Won a major university engineering prize within 3 months of inception.</li>
+                    <li><strong>Insight:</strong> Leadership is building trust so people keep moving after structural failures.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>SUA Verification Device</h3>
+                    <div class="subtitle">Vehicles & Real-World Evidence</div>
+                    <p>A verification system combining vehicle safety engineering and hardware data to reconstruct disputed acceleration events with empirical truth.</p>
+                </div>
+                <ul>
+                    <li><strong>Validation:</strong> 1st place at the SNU Creative Engineering Competition; represented SNU at ICDF.</li>
+                    <li><strong>Foundation:</strong> Backed by a heavy commercial vehicle license and accident appraiser training.</li>
+                    <li><strong>Core Belief:</strong> When human testimony and institutional claims collide, physics reveals the truth.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>Simulation & Computation</h3>
+                    <div class="subtitle">CFD & Physical Intelligence Systems</div>
+                    <p>Applying computational tools not as abstract code, but as a critical layer to calculate, simulate, control, and secure physical reality.</p>
+                </div>
+                <ul>
+                    <li><strong>Scope:</strong> Ballistic trajectories, CFD flow analysis, and aeroelastic impact modeling.</li>
+                    <li><strong>Industry:</strong> Contributed simulation and 3D design for an anti-drone defense system project.</li>
+                    <li><strong>Future Track:</strong> Connecting sensor networks, simulation, and institutional action into a coherent operational picture.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>Future Systems</h3>
+                    <div class="subtitle">Orbital Safety & Software Security</div>
+                    <p>Proactive research targeting structural resilience, long-endurance propulsion, and aerospace critical infrastructure robustness.</p>
+                </div>
+                <ul>
+                    <li><strong>Space Systems:</strong> Analyzing high-speed debris impact on deployable satellite structures.</li>
+                    <li><strong>Cybersecurity:</strong> Researching the security and resilience of core aerospace flight software (cFS).</li>
+                    <li><strong>Energy:</strong> Studying hydrogen hybrid drone control approaches for endurance platforms.</li>
                 </ul>
             </div>
 
@@ -310,49 +402,64 @@
     </section>
 
     <section id="story" class="container">
-        <h2>The Trajectory</h2>
+        <h2>Builder Story</h2>
         
         <div class="story-block">
-            <h3>3-1. The Execution</h3>
-            <p><em>Theory is obsolete without execution. I refused to be confined to theory-centric lectures. I wanted to build.</em></p>
+            <h3>1. From Competition to Engineering Identity</h3>
+            <p><em>Driven by a intense focus on learning and execution from an early age.</em></p>
             <ul>
-                <li><strong>The Genesis of Leadership:</strong> Rallied students to build a 2-stage water rocket with payload ejection. I promised my team: "I will put at least 100,000 KRW in your hands." We won 3rd place, and I kept that promise.</li>
-                <li><strong>Ground-Level Mechanics:</strong> Acquired a heavy commercial vehicle license and the national Traffic Accident Appraiser license to understand physical limits and collisions.</li>
-                <li><strong>The Masterclass in Team Building:</strong> Took a gap year to perfect the rocket. We failed multiple launches. Working Monday to Friday, 10 AM to 7 PM, I fostered absolute trust, bought meals, and embraced rational debate. I personally engineered the separation mechanism.</li>
-                <li><strong>Redefining Braking Systems:</strong> Won 1st place with an SUA prevention device. Used fluid resistance to decelerate the driveshaft continuously, proving it with a 3D-printed torque rig.</li>
-                <li><strong>The Global Reality:</strong> Winning 3rd place at ICDF was overshadowed by seeing Chinese undergrads win 1st. I felt the chilling reality of their tech acceleration. My mission crystalized: Tech Patriotism.</li>
-                <li><strong>Pushing Propulsion:</strong> Engineered a shuttered side thruster for guided projectiles, verifying theoretical thrust via Ansys Fluent.</li>
+                <li>Spent consecutive years ranked near the top of the entire school in middle school, eventually securing the first rank through absolute grind.</li>
+                <li>Failing to enter a science high school became the first major turning point, shattering conventional elite student conformity and forging a desire to prove things directly through physical execution.</li>
             </ul>
         </div>
 
         <div class="story-block">
-            <h3>3-2. The Crash</h3>
-            <p><em>I targeted US defense giants like Shield AI and Anduril. Then, I hit the Valley of Death.</em></p>
+            <h3>2. Independent Curiosity & The New Worldview</h3>
+            <p><em>Obsessed with the physical constraints governing motion, velocity, and trajectories.</em></p>
             <ul>
-                <li><strong>The Valley of Death:</strong> Failed the Preliminary Startup Package. Clashed with my co-founder. Bombarded with skepticism: "Where is your business model?" Overwhelmed, I pivoted to a bird-inspired drone to appease critics.</li>
-                <li><strong>The Cost of Compromise:</strong> Lost 13kg and suffered severe insomnia. I lost the joy of engineering trying to satisfy Korean mentors who insisted on "Customers and BMs" instead of targeting VCs aligned with extreme hardware.</li>
-                <li><strong>The Rebirth:</strong> At the SNAAC Ideathon, my team was paralyzed over a microbe wastewater BM. Biology isn't my field, but I focused for 30 minutes, synthesized the logic, and delivered a legendary pitch. We won 1st place in two days.</li>
-                <li><strong>15 Hardware Crashes:</strong> Poured my 5M KRW savings into 11 iterations of the Ornithopter. Conducted 15+ flights. All failed. It was pure heuristic engineering—surviving shattered frames and negative Gs.</li>
+                <li>Self-studied aerospace mechanics, fluid dynamics, and cosmic expansion models outside the standard high school curriculum.</li>
+                <li>Utilized a gap year to change deeply: mathematically modeled fluid variables, adopted a first-principles framework, and completely mastered working English independently to interface with global tech networks.</li>
+                <li>Grew dedicated to the concepts of open societies, national security, and the idea that technology must serve human freedom.</li>
             </ul>
         </div>
 
         <div class="story-block">
-            <h3>3-3. The Validation</h3>
-            <p><em>Execution is the only metric that matters.</em></p>
+            <h3>3. The Realities of Validation & Teams</h3>
+            <p><em>Discovering that logical correctness requires undeniable physical proof to survive.</em></p>
             <ul>
-                <li><strong>Hacking the System:</strong> Enraged by the lack of support for hardware builders after a KBS doc, I marched into the SNU Engineering Dean's office and demanded backing. This directly led to the SNU Entrepreneurial Innovation Program.</li>
-                <li><strong>The Ultimate Proof:</strong> At ADEX 2025, I saw a drone-launched guided projectile mockup at the LIG Nex1 booth, partnered with Shield AI. It was my exact concept from 10 months prior. Had I built the prototype, the PoC would be mine. Lesson learned: Execution over everything.</li>
-                <li><strong>The Next Lap:</strong> The Ornithopter is back on the bench. Using DeLaurier's model, I am reaching the edge of PoC. Project "AeroRover" is underway. Join me on the track.</li>
+                <li>At Seoul National University, pointed out critical engineering club anomalies that were ignored—and later vindicated when those exact issues forced catastrophic failures in competition.</li>
+                <li>Founded an independent team to build a two-stage rocket system despite academic skepticism, managing rigorous schedules, budget allocations, and engineering the payload separation mechanism to achieve a major prize.</li>
+                <li>Obtained commercial heavy driving credentials and traffic accident appraiser expertise to master ground vehicle dynamics and collision analytics under extreme constraints.</li>
+            </ul>
+        </div>
+
+        <div class="story-block">
+            <h3>4. The Valley of Death & Rebirth</h3>
+            <p><em>Surviving the collapse of a hardware initiative to emerge as a disciplined builder.</em></p>
+            <ul>
+                <li>Attempted a deep-tech aerospace hardware startup in 2025 and hit the absolute wall: co-founder friction, funding depletion, team disintegration, and severe burnout leading to a 13kg weight loss.</li>
+                <li>Rebuilt an internal operating system through faith in Jesus Christ, decoupling personal validation from immediate engineering outcomes.</li>
+                <li>Demonstrated extreme structural agility by joining an ideathon outside his domain, synthesizing a complex microbial wastewater business architecture in 30 minutes, and delivering a pitch that secured 1st place.</li>
+            </ul>
+        </div>
+
+        <div class="story-block">
+            <h3>5. Strategic Alignment</h3>
+            <p><em>Validating technical intuition against global defense standards.</em></p>
+            <ul>
+                <li>Pushed through 11 iterations of a custom ornithopter platform, treating repeated structural failures purely as heuristic physical data.</li>
+                <li>At ADEX 2025, discovered a newly displayed compact payload concept from a major defense firm that mirrored his exact unexecuted design from 10 months prior, proving his technical instinct was highly aligned with the future battlefield.</li>
+                <li>Marched into the SNU Engineering Dean's office to demand structural support for raw hardware builders, leading directly to the creation of the Entrepreneurial Innovation Program, where he was designated as <strong>Class Zero</strong>.</li>
             </ul>
         </div>
     </section>
 
     <footer id="contact">
         <h2>Finish Your Lap</h2>
-        <p>I am currently seeking US-based VC partners and defense network access for PoC.<br>If you bet on relentless execution, let's talk.</p>
+        <p>Seeking technical mentors, extreme hardware investors, and builders aligned with national security and defense systems.<br><strong>Hardware does not accept lies. If the physics is wrong, the system fails.</strong></p>
         <div class="social-links">
             <a href="mailto:lsjaerospace@gmail.com">Email</a>
-            <a href="www.linkedin.com/in/seokjoon-lee-55696a377" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/seokjoon-lee-55696a377" target="_blank">LinkedIn</a>
             <a href="https://github.com/ANVIL-Aeronautics" target="_blank">GitHub</a>
         </div>
     </footer>
