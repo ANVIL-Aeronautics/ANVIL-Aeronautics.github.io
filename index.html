@@ -113,7 +113,7 @@
             background-color: var(--accent-color);
         }
 
-        /* Hero Section (Command Interface Vibe) */
+        /* Hero Section (Command Interface Vibe Refined) */
         #hero {
             height: 100vh;
             display: flex;
@@ -121,45 +121,76 @@
             justify-content: center;
             align-items: flex-start;
             padding: 0 10vw;
-            background: linear-gradient(180deg, rgba(5,5,5,0.7) 0%, rgba(5,5,5,0.95) 100%), url('assets/hero-banner.jpg') no-repeat center center/cover;
+            background: linear-gradient(180deg, rgba(5,5,5,0.9) 0%, #050505 100%), url('assets/hero-banner.jpg') no-repeat center center/cover;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 10vw; right: 10vw; bottom: 0;
+            border-left: 1px solid rgba(255, 255, 255, 0.03);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+        }
+
+        #hero .sys-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            font-family: var(--mono-font);
         }
 
         #hero .sys-label {
             font-family: var(--mono-font);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: var(--accent-color);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
+            letter-spacing: 2px;
+            background: rgba(225, 29, 72, 0.1);
+            padding: 4px 8px;
+            border: 1px solid rgba(225, 29, 72, 0.2);
+            border-radius: 2px;
+        }
+
+        #hero .sys-status {
+            font-size: 0.75rem;
+            color: #71717a;
+            letter-spacing: 1px;
         }
 
         #hero h1 {
-            font-size: 4.5rem;
+            font-size: 3.8rem;
             font-weight: 900;
             line-height: 1.05;
             letter-spacing: -0.04em;
             margin-bottom: 25px;
             max-width: 900px;
+            color: #fff;
+            text-shadow: 0 0 40px rgba(255,255,255,0.05);
         }
 
         #hero .quote {
-            font-size: 1.4rem;
-            font-style: italic;
+            font-size: 1.25rem;
+            font-style: normal;
+            font-family: var(--mono-font);
             color: #a1a1aa;
             margin-bottom: 35px;
             border-left: 2px solid var(--accent-color);
             padding-left: 20px;
-            max-width: 750px;
+            max-width: 700px;
             line-height: 1.6;
+            letter-spacing: -0.01em;
         }
 
         #hero p {
-            font-size: 1.15rem;
-            margin-bottom: 45px;
-            max-width: 650px;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            max-width: 680px;
             color: #d4d4d8;
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .btn-group {
@@ -169,33 +200,37 @@
 
         .btn {
             display: inline-block;
-            padding: 16px 32px;
+            padding: 16px 36px;
             background-color: var(--accent-color);
             color: #fff;
             font-family: var(--mono-font);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 2px;
-            transition: all 0.2s ease;
+            letter-spacing: 1.5px;
+            border-radius: 1px;
+            border: 1px solid var(--accent-color);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn:hover {
             background-color: #be123c;
-            transform: translateY(-2px);
+            border-color: #be123c;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(225, 29, 72, 0.15);
         }
 
         .btn-outline {
             background-color: transparent;
-            border: 1px solid #444;
-            color: #d4d4d8;
+            border: 1px solid #3f3f46;
+            color: #a1a1aa;
         }
 
         .btn-outline:hover {
-            background-color: #fff;
-            color: #050505;
+            background-color: transparent;
+            color: #fff;
             border-color: #fff;
+            transform: translateY(-1px);
         }
 
         /* Technical Blueprint Grid */
@@ -439,9 +474,12 @@
     </nav>
 
     <header id="hero">
-        <div class="sys-label">Operational Manifesto v2.0</div>
-        <div class="quote">"I build real machines because some technologies are too necessary to wait for permission."</div>
+        <div class="sys-container">
+            <div class="sys-label">SYS_MANIFESTO // V2.0</div>
+            <div class="sys-status">[STATUS: ACTIVE_OPERATIONS]</div>
+        </div>
         <h1>SEOKJOON LEE</h1>
+        <div class="quote">"I build real machines because some technologies are too necessary to wait for permission."</div>
         <p>An Aerospace Builder for Freedom, Truth, and the Frontier. Undergraduate Senior at Seoul National University. Turning vital physical systems into operational reality.</p>
         <div class="btn-group">
             <a href="#projects" class="btn">Access Proof of Work</a>
@@ -606,7 +644,7 @@
                 <ul>
                     <li>Executed 11 iterations of an independent flight system, extracting clean structural data from repeated kinetic impacts.</li>
                     <li>At ADEX 2025, witnessed a newly revealed defense mockup from a prime sovereign contractor that tracked his exact unexecuted payload concept from 10 months prior, proving his technical instincts map perfectly to the actual battlefield.</li>
-                    <li>Confronted the Office of the Dean at SNU Engineering to demand real institutional shielding for raw hardware builders, leading directly to the Entrepreneurial Innovation Program, where he was designated as <strong>Class Zero</strong>.</li>
+                    <li>Confronted the Office of the Dean at SNU Engineering to demand real institutional shielding for raw hardware builders, leading directly to the creation of the Entrepreneurial Innovation Program, where he was designated as <strong>Class Zero</strong>.</li>
                 </ul>
             </div>
 
